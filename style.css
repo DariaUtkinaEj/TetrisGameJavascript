@@ -22,7 +22,7 @@ body {
     display: flex;
     overflow: hidden;
     flex-wrap: wrap;
-    position: absolute;
+    position: absolute; 
     bottom: 0;
     background-color: #fff;
 }
