@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    font-family: Arial;
 }
 
 .main {
@@ -11,7 +10,12 @@
     height: 700px;
     border: 1px solid #000;
 }
-
+body {
+    background-color: #000;
+    font-family: "Courier New", monospace !important;
+    margin: auto;
+    width: 800px;
+}
 .tetris {
     width: 500px;
     height: 900px;
@@ -26,21 +30,31 @@
 .excel {
     width: 50px;
     height: 50px;
-    border: 1px dashed #ccc;
+    border: 1px solid #000;
+    box-shadow: inset 0px 0px 15px 5px #1a1a1a;
+    background-color: #3f6c32;
 }
 
-.figure, .set {
-    background-color: tomato;
-}
+.figure {
+    background-color: #956259 !important;
+  }
+.set {
+    background-color: tomato !important;
+  }
 
 input {
     display: block;
     margin: 30px auto;
     font-size: 30px;
     padding: 10px;
+    background-color: #000;
+    border: none;
+    color: #90ef75;
 }
 
+
 .controls {
+    color: #90ef75;
     padding: 20px;
     position: absolute;
     top: 200px;
