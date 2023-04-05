@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+.main {
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+    width: 500px;
+    height: 700px;
+    border: 1px solid #000;
+}
+
+.tetris {
+    width: 500px;
+    height: 900px;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 0;
+    background-color: #fff;
+}
+
+.excel {
+    width: 50px;
+    height: 50px;
+    border: 1px dashed #ccc;
+}
+
+.figure, .set {
+    background-color: tomato;
+}
+
+input {
+    display: block;
+    margin: 30px auto;
+    font-size: 30px;
+    padding: 10px;
+}
+
+.controls {
+    padding: 20px;
+    position: absolute;
+    top: 200px;
+    right: 200px;
+}
