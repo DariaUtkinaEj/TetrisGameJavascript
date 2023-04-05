@@ -371,7 +371,7 @@ let rotate = 1;
         for (let n=1; n<11; n++) {
             if (document.querySelector(`[posX = "${n}"][posY = "15"]`).classList.contains('set')) {
                 clearInterval(interval);
-                alert('Game Over. Your score: ${score}');
+                alert(`Game Over. Your score: ${score}`);
                 break;
             }
         }
