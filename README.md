@@ -1,4 +1,8 @@
 # Javascript Tetris Game! 
-here's a game:
-## https://just-for-fun-myapps.ru/tetris/
+
+Игра в новом стиле, спасибо за вклад @Tokyo-Tokyo-Tokyo !
+
+## https://just-for-fun-myapps.ru/newtetris/
+
+here's an old version of the game: https://just-for-fun-myapps.ru/tetris/
 
