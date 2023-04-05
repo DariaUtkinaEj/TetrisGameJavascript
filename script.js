@@ -27,7 +27,37 @@ let mainArr = [
     [
         [0, 1],
         [0, 2],
-        [0, 3]
+        [0, 3],
+
+        // 90
+        [
+            [-1, 1],
+            [0, 0],
+            [1, -1], 
+            [2, -2],
+        ],
+        // 180
+        [
+            [1, -1],
+            [0, 0],
+            [-1, 1], 
+            [-2, 2],
+        ],
+         // 270
+         [
+            [-1, 1],
+            [0, 0],
+            [1, -1], 
+            [2, -2],
+        ],
+        // 360
+
+        [
+            [1, -1],
+            [0, 0],
+            [-1, 1], 
+            [-2, 2],
+        ],
     ],
 
     // квадрат
@@ -35,6 +65,35 @@ let mainArr = [
         [1, 0],
         [0, 1],
         [1, 1],
+
+        //90
+        [
+            [0, 0],
+            [0, 0],
+            [0, 0],
+            [0, 0],
+        ],
+        //180
+        [
+            [0, 0],
+            [0, 0],
+            [0, 0],
+            [0, 0],
+        ],
+        //270
+        [
+            [0, 0],
+            [0, 0],
+            [0, 0],
+            [0, 0],
+        ],
+         //360
+         [
+            [0, 0],
+            [0, 0],
+            [0, 0],
+            [0, 0],
+        ],
     ],
 
     // L
@@ -42,6 +101,35 @@ let mainArr = [
         [1, 0],
         [0, 1],
         [0, 2],
+
+        //90
+        [
+            [0, 0],
+            [-1, 1],
+            [1, 0],
+            [2, -1],
+        ],
+        //180
+        [
+            [1, -1],
+            [1, -1],
+            [-1, 0],
+            [-1, 0],
+        ],
+        //270
+        [
+            [-1, 0],
+            [0, -1],
+            [2, -2],
+            [1, -1],
+        ],
+        //360
+        [
+            [0, -1],
+            [0, -1],
+            [-2, 0],
+            [-2, 0],
+        ],
     ],
 
      // J
@@ -49,38 +137,156 @@ let mainArr = [
         [1, 0],
         [1, 1],
         [1, 2],
+
+        //90
+        [
+            [0, 0],
+            [0, 0],
+            [1, -1],
+            [-1, -1],
+        ],
+          //180
+          [
+            [0, -1],
+            [-1, 0],
+            [-2, 1],
+            [1, 0],
+        ],
+          //270
+          [
+            [2, 0],
+            [0, 0],
+            [1, -1],
+            [1, -1],
+        ],
+          //360
+          [
+            [-2, 0],
+            [1, -1],
+            [0, 0],
+            [-1, 1],
+        ],
     ],
 
-    
+    // molnia right
     [
         [1, 0],
         [-1, 1],
         [0, 1],
+
+         //90
+         [
+            [0, -1],
+            [-1, 0],
+            [2, -1],
+            [1, 0],
+        ],
+          //180
+          [
+            [0, 0],
+            [1, -1],
+            [-2, 0],
+            [-1, -1],
+        ],
+          //270
+          [
+            [0, -1],
+            [-1, 0],
+            [2, -1],
+            [1, 0],
+        ],
+          //360
+          [
+            [0, 0],
+            [1, -1],
+            [-2, 0],
+            [-1, -1],
+        ],
     ],
 
-
-    [
+     //molnia left
+    [ 
         [1, 0],
         [1, 1],
         [2, 1],
+
+        //90
+        [
+            [2, -1],
+            [0, 0],
+            [1, -1],
+            [-1, 0],
+        ],
+          //180
+          [
+            [-2, 0],
+            [0, -1],
+            [-1, 0],
+            [1, -1],
+        ],
+          //270
+          [
+            [2, -1],
+            [0, 0],
+            [1, -1],
+            [-1, 0],
+        ],
+          //360
+          [
+            [-2, 0],
+            [0, -1],
+            [-1, 0],
+            [1, -1],
+        ],
     ],
 
-
+// lego
     [
         [1, 0],
         [2, 0],
         [1, 1],
+
+        //90
+        [
+            [1, -1],
+            [0, 0],
+            [0, 0],
+            [0, 0],
+        ],
+        //180
+        [
+            [0, 0],
+            [-1, 0],
+            [-1, 0],
+            [1, -1],
+        ],
+        //270
+        [
+            [1, -1],
+            [1, -1],
+            [1, -1],
+            [0, 0],
+        ],
+        //360
+        [
+            [-2, 0],
+            [0, -1],
+            [0, -1],
+            [-1, -1],
+        ]
     ],
 ]
 
 let currentFigure = 0;
 let figureBody = 0;
+let rotate = 1;
    
     function create() {
         function getRandom() {
             return Math.round(Math.random()*(mainArr.length-1))
         }
 
+        rotate = 1;
         currentFigure = getRandom();
 
         figureBody = [
@@ -95,6 +301,10 @@ let figureBody = 0;
         }
     }
     create();
+
+    let score = 0;
+    let input = document.getElementsByTagName('input')[0];
+    input.value = `Your score: ${score}`;
 
     function move() {
         let moveFlag = true;
@@ -129,6 +339,41 @@ let figureBody = 0;
         for (let i=0; i<figureBody.length; i++) {
             figureBody[i].classList.remove('figure');
             figureBody[i].classList.add('set');
+        }
+        for (let i=1; i<15; i++) {
+            let count = 0;
+            for (let k=1; k<11; k++) {
+                if (document.querySelector(`[posX = "${k}"][posY = "${i}"]`).classList.contains('set')) {
+                    count++;
+                    if (count == 10) {
+                        score +=10;
+                        input.value = `Your score: ${score}`;
+                        for (let m=1; m<11; m++) {
+                            document.querySelector(`[posX = "${m}"][posY = "${i}"]`).classList.remove('set')
+                        }
+                        let set = document.querySelectorAll('.set');
+                        let newSet = [];
+                        for (let s=0; s<set.length; s++) {
+                            let setCoordinates = [set[s].getAttribute('posX'), set[s].getAttribute('posY')];
+                            if (setCoordinates[1] > i) {
+                                set[s].classList.remove('set');
+                                newSet.push(document.querySelector(`[posX = "${setCoordinates[0]}"][posY = "${setCoordinates[1]-1}"]`));
+                            }
+                        }
+                        for (let a=0; a<newSet.length; a++) {
+                            newSet[a].classList.add('set');
+                        }
+                        i--;
+                    }
+                }
+            }
+        }
+        for (let n=1; n<11; n++) {
+            if (document.querySelector(`[posX = "${n}"][posY = "15"]`).classList.contains('set')) {
+                clearInterval(interval);
+                alert('Game Over. Your score: ${score}');
+                break;
+            }
         }
         create();
         }
@@ -183,6 +428,39 @@ let figureBody = 0;
             getNewState(1);
         } else if (e.keyCode == 40) {
             move();
+        } else if (e.keyCode == 38) {
+            flag = true;
+
+            let figureNew = [
+                document.querySelector(`[posX ="${+coordinates1[0] + mainArr[currentFigure][rotate+2][0][0]}"][posY ="${+coordinates1[1] + mainArr[currentFigure][rotate+2][0][1]}"]`),
+                document.querySelector(`[posX ="${+coordinates2[0] + mainArr[currentFigure][rotate+2][1][0]}"][posY ="${+coordinates2[1] + mainArr[currentFigure][rotate+2][1][1]}"]`),
+                document.querySelector(`[posX ="${+coordinates3[0] + mainArr[currentFigure][rotate+2][2][0]}"][posY ="${+coordinates3[1] + mainArr[currentFigure][rotate+2][2][1]}"]`),
+                document.querySelector(`[posX ="${+coordinates4[0] + mainArr[currentFigure][rotate+2][3][0]}"][posY ="${+coordinates4[1] + mainArr[currentFigure][rotate+2][3][1]}"]`),
+            ];
+
+            for (let i=0; i<  figureNew.length; i++) {
+                if (!figureNew[i] || figureNew[i].classList.contains('set')) {
+                    flag = false;
+                }
+            }
+
+            if (flag == true) {
+                for (let i=0; i < figureBody.length; i++) {
+                    figureBody[i].classList.remove('figure');
+                }
+
+                figureBody = figureNew;
+
+                for (let i=0; i < figureBody.length; i++) {
+                    figureBody[i].classList.add('figure');
+                }
+
+                if (rotate < 4) {
+                    rotate++;
+                } else {
+                    rotate =1;
+                }
+            }
         }
 
     })
