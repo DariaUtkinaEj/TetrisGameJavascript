@@ -1,6 +1,5 @@
-* {    
+a* {
     box-sizing: border-box;
-    font-family: Arial;
 }
 
 .main {
@@ -11,51 +10,52 @@
     height: 700px;    
     border: 1px solid #000;
 }
-
-.tetris {    
+body {
+    background-color: #000;
+    font-family: "Courier New", monospace !important;
+    margin: auto;
+    width: 800px; 
+}
+.tetris {
     width: 500px;
     height: 900px;    
     display: flex;
     overflow: hidden;    
     flex-wrap: wrap;
-    position: absolute;   
+    position: absolute; 
     bottom: 0;
     background-color: #fff;
 }
 
 .excel {
-  width: 50px;  
-  height: 50px;
-  border: 1px solid #000;  
-  box-shadow: inset 0px 0px 15px 5px #1a1a1a;
-  background-color: #3f6c32;
-}
-
-body {
-    background-color: #000;   
-    font-family: "Courier New", monospace !important;
-    margin: auto;    
-    width: 800px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+    box-shadow: inset 0px 0px 15px 5px #1a1a1a;
+    background-color: #3f6c32;
 }
 
 .figure {
-  background-color: #956259 !important;
-}
-
-.set {  
+    background-color: #956259 !important;
+  }
+.set {
     background-color: tomato !important;
-}* {
-    font-family: "Courier New", monospace !important;}
+  }
 
 input {
-  background-color: #000;  
-  border: none;
-  color: #90ef75;    
-  color: #90ef75;
-   }
+    display: block;
+    margin: 30px auto;
+    font-size: 30px;
+    padding: 10px;
+    background-color: #000;
+    border: none;
+    color: #90ef75;
+}
+
 
 .controls {
-    padding: 20px;   
+    color: #90ef75;
+    padding: 20px;
     position: absolute;
     top: 200px;    
     right: 100px;
