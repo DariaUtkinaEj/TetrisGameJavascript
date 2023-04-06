@@ -1,84 +1,100 @@
-* {
+* {    
     box-sizing: border-box;
     font-family: Arial;
 }
 
 .main {
-    margin: 50px auto;
+    margin: 50px auto;    
     position: relative;
-    overflow: hidden;
+    overflow: hidden;    
     width: 500px;
-    height: 700px;
+    height: 700px;    
     border: 1px solid #000;
 }
 
-.tetris {
+.tetris {    
     width: 500px;
-    height: 900px;
+    height: 900px;    
     display: flex;
-    overflow: hidden;
+    overflow: hidden;    
     flex-wrap: wrap;
-    position: absolute;
+    position: absolute;   
     bottom: 0;
     background-color: #fff;
 }
 
 .excel {
-    width: 50px;
-    height: 50px;
-    border: 1px dashed #ccc;
+  width: 50px;  
+  height: 50px;
+  border: 1px solid #000;  
+  box-shadow: inset 0px 0px 15px 5px #1a1a1a;
+  background-color: #3f6c32;
 }
 
-.figure, .set {
-    background-color: tomato;
+body {
+    background-color: #000;   
+    font-family: "Courier New", monospace !important;
+    margin: auto;    
+    width: 800px;
 }
+
+.figure {
+  background-color: #956259 !important;
+}
+
+.set {  
+    background-color: tomato !important;
+}* {
+    font-family: "Courier New", monospace !important;}
 
 input {
-    display: block;
-    margin: 30px auto;
-    font-size: 30px;
-    padding: 10px;
-}
+  background-color: #000;  
+  border: none;
+  color: #90ef75;    
+  color: #90ef75;
+   }
 
 .controls {
-    padding: 20px;
+    padding: 20px;   
     position: absolute;
-    top: 200px;
-    right: 200px;
+    top: 200px;    
+    right: 100px;
+    color: #90ef75;
 }
 
-.modal {
+.modal {    
     position: fixed;
-    text-transform: uppercase;
+    text-transform: uppercase;    
     width: 500px;
     height: 500px;
-    top: 50%;
+    top: 50%;    
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);    
     background-color: #fff;
 }
 
-.button {
+.button {    
     border: 2px solid tomato;
-    width: 300px;
+    width: 300px;    
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 20px;    
     padding: 30px 0;
-    cursor: pointer;
+    cursor: pointer;    
     font-size: 25px;
     transition: all .3s;
 }
 
-.button:hover {
+.button:hover 
+{
     border-radius: 40px;
 }
 
 .overlay {
-    position: fixed;
+    position: fixed;    
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100%;    
     height: 100%;
-    z-index: 2;
+    z-index: 2;    
     background-color: tomato;
 }
