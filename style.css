@@ -21,7 +21,7 @@ body {
     height: 900px;
     display: flex;
     overflow: hidden;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     position: absolute; 
     bottom: 0;
     background-color: #fff;
